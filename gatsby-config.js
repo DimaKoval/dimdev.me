@@ -1,11 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `dimdev.me`,
+    description: `description`,
+    author: `Dima Koval <iamdimakoval@gmail.com>`,
   },
   plugins: [
+    // SEO
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://dimdev.me",
+        sitemap: "https://dimdev.me/sitemap.xml",
+        policy: [{ userAgent: "*", disallow: "/" }],
+      },
+    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,8 +37,18 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "dimdev.me",
+        region: "eu-west-1",
+      },
+    },
   ],
-}
+};

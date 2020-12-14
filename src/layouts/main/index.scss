@@ -1,0 +1,30 @@
+.layout {
+  display: grid;
+  grid-template:
+    "header header header" min-content
+    "sidebar content content" auto
+    ". footer footer" 100px / min-content 1fr 1fr;
+  min-height: 100%;
+  width: 100%;
+
+  .header-area {
+    grid-area: header;
+  }
+
+  .content-area {
+    grid-area: content;
+    padding: 1.5rem;
+  }
+
+  .sidebar-area {
+    grid-area: sidebar;
+    padding: 1.5rem;
+  }
+
+  .footer-area {
+    display: flex;
+    align-items: center;
+    grid-area: footer;
+    padding: 1.5rem;
+  }
+}

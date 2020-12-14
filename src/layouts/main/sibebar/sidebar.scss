@@ -1,0 +1,87 @@
+nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+
+  perspective: 300px;
+  perspective-origin: 97% 50%;
+  padding: 2rem 2rem 0;
+
+  .header--nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+
+    h1 {
+      font-size: 46px;
+      font-weight: 300;
+      margin: 0.5rem 0 0;
+    }
+
+    span {
+      color: #5a5a5a;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-self: flex-end;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: black;
+      color: white;
+      overflow: hidden;
+
+      img {
+        width: 50px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style: none;
+
+    margin-top: 3rem;
+
+    .nav-container {
+      margin-bottom: 7px;
+      padding: 4px 0 4px 17px;
+      text-transform: uppercase;
+      transition: transform 0.6s ease;
+      cursor: pointer;
+
+      .nav-text {
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        transition: all 0.6s ease;
+        transform-style: preserve-3d;
+        transform: rotateY(-7deg); /* Поворачиваем относительно оси Y */
+        transform-origin: right center;
+
+        padding: 0 0.2rem 0 3rem;
+        background: lightcoral;
+        font-size: 50px;
+        font-weight: 600;
+        display: inline-block;
+        text-transform: uppercase;
+      }
+
+      &.disabled .nav-text {
+        background: rgba(78, 42, 42, 0.507);
+        color: rgba(0, 0, 0, 0.703);
+      }
+
+      &:hover .nav-text {
+        -webkit-text-stroke: thin black;
+        color: rgba(255, 255, 255, 0.6);
+        transform: rotate3d(0, 0, 0, 0deg);
+      }
+    }
+  }
+}
