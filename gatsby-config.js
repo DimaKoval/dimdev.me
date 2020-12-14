@@ -1,3 +1,4 @@
+const base = new URL("https://dimdev.me");
 module.exports = {
   siteMetadata: {
     title: `dimdev.me`,
@@ -10,8 +11,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://dimdev.me",
-        sitemap: "https://dimdev.me/sitemap.xml",
+        host: `${base}`,
+        sitemap: `${base}sitemap.xml`,
         policy: [{ userAgent: "*", disallow: "/" }],
       },
     },
@@ -34,7 +35,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/Signature.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-typescript`,
